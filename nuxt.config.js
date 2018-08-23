@@ -75,6 +75,6 @@ module.exports = {
     }
   },
   env: {
-    apiUrl: process.env.API_URL
+    apiUrl: process.env.API_URL || 'http://wrongurl.com'
   }
 }
