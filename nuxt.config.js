@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config()
 
 const nodeExternals = require('webpack-node-externals')
 
@@ -45,7 +46,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -62,7 +64,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
@@ -71,5 +73,8 @@ module.exports = {
         ]
       }
     }
+  },
+  env: {
+    apiUrl: process.env.API_URL
   }
 }
