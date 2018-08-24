@@ -5,10 +5,6 @@ const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   mode: 'spa',
-
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'FLS 2018',
     meta: [
@@ -21,45 +17,26 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#FFFFFF' },
-
-  /*
-  ** Global CSS
-  */
   css: [
     'vuetify/src/stylus/main.styl'
   ],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     '@/plugins/vuetify'
   ],
-
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa'
   ],
-  /*
-  ** Axios module configuration
-  */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
+  manifest: {
+    name: 'FLS 2018',
+    background_color: "#8e44ad",
+  },
 
-  /*
-  ** Build configuration
-  */
   build: {
     /*
     ** You can extend webpack config here
