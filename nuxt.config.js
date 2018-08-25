@@ -59,8 +59,11 @@ module.exports = {
     resetOnError: true,
   },
   manifest: {
-    name: 'FLS 2018',
+    name: 'Future Leader Summit 2018',
+    short_name: 'FLS 2018',
     background_color: "#f4f2e9",
+    theme_color: '#18bc97',
+    start_url: '/'
   },
   env: {
     apiUrl: process.env.API_URL || 'http://wrongurl.com'
