@@ -2,6 +2,7 @@
   <v-app>
     <v-toolbar dark fixed dense app color="primary">
       <v-btn
+        @click="$router.go(-1)"
         icon
       >
         <v-icon v-html="'chevron_left'"></v-icon>
@@ -9,9 +10,10 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
+        to="/help"
         icon
       >
-        <v-icon>notifications</v-icon>
+        <v-icon>help_outline</v-icon>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -41,7 +43,7 @@
         navs: [
           { route: 'home', path: '/', icon: 'home' },
           { route: 'acara', path: '/acara', icon: 'event' },
-          { route: 'pengumuman', path: '/pengumuman', icon: 'history' },
+          { route: 'pengumuman', path: '/pengumuman', icon: 'notifications' },
           { route: 'profile', path: '/profile', icon: 'account_circle' },
         ]
       }
