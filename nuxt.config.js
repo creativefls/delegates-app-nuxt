@@ -68,6 +68,9 @@ module.exports = {
   env: {
     apiUrl: process.env.API_URL || 'http://wrongurl.com'
   },
+  generate: {
+    fallback: true,
+  },
   build: {
     /*
     ** You can extend webpack config here
