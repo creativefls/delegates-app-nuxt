@@ -27,26 +27,50 @@
       </v-btn>
     </v-bottom-nav>
     <v-card height="36px" class="mt-3" flat color="transparent"></v-card>
+    <v-snackbar
+      :color="notification.type"
+      multi-line
+      top
+      right
+      v-model="snackbar">{{ notification.message }}
+      <v-btn dark flat @click="TOGGLE_NOTIFICATION">OK</v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        title: 'Vuetify.js',
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ],
-        activeNavigation: 'recent',
-        navs: [
-          { route: 'home', path: '/', icon: 'home' },
-          { route: 'acara', path: '/acara', icon: 'event' },
-          { route: 'pengumuman', path: '/pengumuman', icon: 'notifications' },
-          { route: 'profile', path: '/profile', icon: 'account_circle' },
-        ]
-      }
+import { mapState, mapMutations } from 'vuex'
+
+export default {
+  data() {
+    return {
+      title: 'Vuetify.js',
+      items: [
+        { icon: 'apps', title: 'Welcome', to: '/' },
+        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+      ],
+      activeNavigation: 'recent',
+      navs: [
+        { route: 'home', path: '/', icon: 'home' },
+        { route: 'acara', path: '/acara', icon: 'event' },
+        { route: 'pengumuman', path: '/pengumuman', icon: 'notifications' },
+        { route: 'profile', path: '/profile', icon: 'account_circle' },
+      ]
     }
+  },
+  computed: {
+    ...mapState(['notification']),
+    snackbar: {
+      get() {
+        return this.notification.active;
+      },
+      set(val) {
+        this.TOGGLE_NOTIFICATION();
+      }
+    },
+  },
+  methods: {
+    ...mapMutations(['TOGGLE_NOTIFICATION'])
   }
+}
 </script>

@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data () {
     return {
@@ -48,7 +50,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['notify']),
     login () {
+      this.loading = true
       this.$auth.loginWith('local', {
         data: {
           email: this.email,
@@ -56,8 +60,13 @@ export default {
         },
       }).then(res => {
         this.$router.replace('/');
+        this.loading = false
       }).catch(err => {
         console.log('err login', err.message);
+        let msg = err.message
+        if (err.response) msg = err.response.data.message
+        this.notify({ type: 'error', message: msg });
+        this.loading = false
       });
     }
   }
