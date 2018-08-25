@@ -1,13 +1,24 @@
 <template>
   <v-app>
-    <v-toolbar dark fixed dense app color="primary">
+    <v-toolbar fixed dense :scroll-off-screen="$route.path == '/'" app color="white">
       <v-btn
         @click="$router.go(-1)"
         icon
       >
         <v-icon v-html="'chevron_left'"></v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <!-- <v-toolbar-title v-text="title"></v-toolbar-title> -->
+      <v-avatar
+        tile
+        class="ml-1"
+        @click="$router.push('/')"
+        size="48px"
+        style="cursor: pointer">
+        <img
+          src="/icon.png"
+          alt="FLS 2018"
+        >
+      </v-avatar>
       <v-spacer></v-spacer>
       <v-btn
         to="/help"
@@ -23,6 +34,7 @@
     </v-content>
     <v-bottom-nav :value="true" :active.sync="activeNavigation" fixed color="white" height="50">
       <v-btn v-for="(nav, key) in navs" :key="key" :to="nav.path" flat color="primary" :value="nav.route">
+        <span>{{ nav.route }}</span>
         <v-icon>{{ nav.icon }}</v-icon>
       </v-btn>
     </v-bottom-nav>
