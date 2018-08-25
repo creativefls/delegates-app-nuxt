@@ -60,7 +60,7 @@ module.exports = {
   },
   manifest: {
     name: 'FLS 2018',
-    background_color: "#8e44ad",
+    background_color: "#f4f2e9",
   },
   env: {
     apiUrl: process.env.API_URL || 'http://wrongurl.com'
