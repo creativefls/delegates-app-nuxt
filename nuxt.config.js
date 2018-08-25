@@ -17,7 +17,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#18bc97' },
   css: [
     'vuetify/src/stylus/main.styl'
   ],
