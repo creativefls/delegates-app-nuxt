@@ -2,7 +2,9 @@
   <v-layout justify-center style="height: 100vh">
     <v-flex md6>
       <v-card>
-        <v-card-title>Login</v-card-title>
+        <v-card-title>
+          <h3 class="headline">Login</h3>
+        </v-card-title>
         <v-card-text>
           <form @submit.prevent="login">
             <v-layout row wrap>
