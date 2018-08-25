@@ -22,7 +22,7 @@
       </v-container>
     </v-content>
     <v-bottom-nav :value="true" :active.sync="activeNavigation" fixed color="white" height="50">
-      <v-btn v-for="(nav, key) in navs" :key="key" :to="nav.path" flat color="blue lighten-1" :value="nav.route">
+      <v-btn v-for="(nav, key) in navs" :key="key" :to="nav.path" flat color="primary" :value="nav.route">
         <v-icon>{{ nav.icon }}</v-icon>
       </v-btn>
     </v-bottom-nav>
