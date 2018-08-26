@@ -17,6 +17,7 @@
     "@nuxtjs/pwa": "^2.0.8",
     "express": "^4.15.3",
     "nuxt": "^1.0.0",
+    "vue-cute-timeline": "^1.2.5",
     "vuetify": "^1.0.19"
   },
   "devDependencies": {
