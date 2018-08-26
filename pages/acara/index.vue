@@ -9,7 +9,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Welcoming Session</b>
@@ -22,7 +22,7 @@
                                       <div>
                                         <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
                                           <img
-                                            src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/welcoming_session.png"
                                             height="200px"
                                           >
                                       </div>
@@ -30,9 +30,9 @@
                                 <v-flex xs8>
                                       <div class="program-content">
                                         <h5>
-                                          <i class="fa fa-calendar"> Minggu, 10 September 2018</i><br>
+                                          <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
                                           <i class="fa fa-clock-o"> 07-00 - 10.00 WIB</i><br>
-                                          <i class="fa fa-map-marker"> Semarang</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
                                         </h5><br>
                                         <p>Merupakan rangkaian pembukaan acara Future Leader Summit 2018 yang berisi
                                         penyambutan delegasi pemuda dan penjelasan mengenai isu yang diangkat dan
@@ -48,7 +48,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Ideation Lab</b>
@@ -57,8 +57,22 @@
                       <v-card-text>
                       <v-container fluid grid-list-lg>
                               <v-layout row>
-                                <v-flex xs>
+                                <v-flex xs4>
+                                      <div>
+                                        <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
+                                          <img
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/idea_summit.png"
+                                            height="200px"
+                                          >
+                                      </div>
+                                </v-flex>
+                                <v-flex xs8>
                                       <div class="program-content">
+                                        <h5>
+                                          <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
+                                          <i class="fa fa-clock-o"> 07-00 - 09.00 WIB</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
+                                        </h5><br>
                                         Merupakan salah satu sesi dalam rangkaian acara FLS 2018
                                         yang akan membahas berbagai isu terkini yang berkaitan dengan
                                         6 room dengan bimbingan seorang pakardalam isu tersebut.
@@ -75,7 +89,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Future Leader in Action</b>
@@ -84,8 +98,22 @@
                       <v-card-text>
                       <v-container fluid grid-list-lg>
                               <v-layout row>
-                                <v-flex xs>
+                                <v-flex xs4>
+                                      <div>
+                                        <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
+                                          <img
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/workshop_class.png"
+                                            height="200px"
+                                          >
+                                      </div>
+                                </v-flex>
+                                <v-flex xs8>
                                       <div class="program-content">
+                                        <h5>
+                                          <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
+                                          <i class="fa fa-clock-o"> 12-30 - 18.30 WIB</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
+                                        </h5><br>
                                         Sebagai validasi ide dari Ideation Lab, sesi ini merupakan sebuah role-play
                                         games dimana para Delegates akan mendapatkan kesempatan untuk berperan
                                         sebagai lembaga pemerintah dalam menyelesaikan beberapa studi kasus untuk
@@ -102,7 +130,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Gala Future Leader</b>
@@ -111,8 +139,23 @@
                       <v-card-text>
                       <v-container fluid grid-list-lg>
                               <v-layout row>
-                                <v-flex xs>
+                                <v-flex xs4>
+                                      <div>
+                                        <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
+                                          <img
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/gala_fls.png"
+                                            height="200px"
+                                          >
+                                      </div>
+                                </v-flex>
+                                <v-flex xs8>
                                       <div class="program-content">
+                                        <h5>
+                                          <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
+                                          <i class="fa fa-clock-o"> 18-30 - 22.20 WIB</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
+                                          <!-- <i class="fa fa-users"> Dresscode : UTC Hotel Semarang</i><br> -->
+                                        </h5><br>
                                         Sebuah ajang networking night pada Future Leader Summit 2018 dimana pada
                                         momen ini para delegates bisa saling memperkenalkan diri, berbagi cerita,
                                         pengalaman, maupun untuk saling menginspirasi satu sama lain. Kegiatan ini
@@ -139,7 +182,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Discovery Panel</b>
@@ -148,8 +191,22 @@
                       <v-card-text>
                       <v-container fluid grid-list-lg>
                               <v-layout row>
-                                <v-flex xs>
+                                <v-flex xs4>
+                                      <div>
+                                        <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
+                                          <img
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"
+                                            height="200px"
+                                          >
+                                      </div>
+                                </v-flex>
+                                <v-flex xs8>
                                       <div class="program-content">
+                                        <h5>
+                                          <i class="fa fa-calendar"> Minggu, 9 September 2018</i><br>
+                                          <i class="fa fa-clock-o"> 07-00 - 11.45 WIB</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
+                                        </h5><br>
                                         Discovery Panel merupakan sesi dalam Future Leader Summit dimana delegates
                                         akan mempelajari millennials must-have-skills yang akan tersedia dalam 10 pilihan
                                         skill yang dapat dipilih oleh Delegates secara digital di hari sebelumnya.
@@ -164,7 +221,7 @@
           <timeline-item bg-color="#9dd8e0cc">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="urban" text-color="white">
+                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div class="title">
                           <v-icon left medium class="white--text">event</v-icon>
                           <b>Grand Summit</b>
@@ -173,8 +230,22 @@
                       <v-card-text>
                       <v-container fluid grid-list-lg>
                               <v-layout row>
-                                <v-flex xs>
+                                <v-flex xs4>
+                                      <div>
+                                        <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
+                                          <img
+                                            src="https://futureleadersummit.org/2017/assets/img/agenda/grand_summit.png"
+                                            height="135px"
+                                          >
+                                      </div>
+                                </v-flex>
+                                <v-flex xs8>
                                       <div class="program-content">
+                                        <h5>
+                                          <i class="fa fa-calendar"> Minggu, 9 September 2018</i><br>
+                                          <i class="fa fa-clock-o"> 12-00 WIB - Selesai</i><br>
+                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
+                                        </h5><br>
                                         Merupakan acara puncak dari Future Leader Summit dengan menghadirkan
                                         keynote speaker inspiratif untuk memaparkan poin-poin penting tema utama dari
                                         FLS 2018: “Preparing the Future Leaders to be ready to Take Charge of the Way in the
