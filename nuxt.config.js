@@ -19,26 +19,57 @@ module.exports = {
 
     ]
   },
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#18bc97' },
   css: [
     'vuetify/src/stylus/main.styl'
   ],
+  router: {
+    middleware: ['auth']
+  },
   plugins: [
     '@/plugins/vuetify'
   ],
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa'
   ],
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseUrl: process.env.API_URL || 'http://whorapiurl.com'
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+          logout: false,
+          user: { url: '/api/auth', method: 'get', propertyName: 'user' },
+        },
+        tokenRequired: true,
+        tokenType: ''
+      }
+    },
+    redirect: {
+      login: '/auth/login',
+      logout: '/',
+      callback: '/auth/login',
+      user: '/profile',
+      home: '/',
+    },
+    resetOnError: true,
   },
   manifest: {
-    name: 'FLS 2018',
-    background_color: "#8e44ad",
+    name: 'Future Leader Summit 2018',
+    short_name: 'FLS 2018',
+    background_color: "#f4f2e9",
+    theme_color: '#18bc97',
+    start_url: '/'
   },
-
+  env: {
+    apiUrl: process.env.API_URL || 'http://wrongurl.com'
+  },
   build: {
     /*
     ** You can extend webpack config here
@@ -53,8 +84,5 @@ module.exports = {
         ]
       }
     }
-  },
-  env: {
-    apiUrl: process.env.API_URL || 'http://wrongurl.com'
   }
 }
