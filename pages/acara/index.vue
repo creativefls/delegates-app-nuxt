@@ -15,24 +15,31 @@
                       </div>
                       </v-chip>
                       <v-card-text>
-                      <v-container fluid grid-list-lg>
+                      <v-container fluid grid-list-lg style="padding:0px">
                               <v-layout row>
-                                <v-flex xs4>
+                                <v-flex xs3>
                                       <div>
                                         <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
                                           <img
                                             src="https://futureleadersummit.org/2017/assets/img/agenda/welcoming_session.png"
-                                            height="110px"
+                                            width="55px"
                                           >
                                       </div>
                                 </v-flex>
-                                <v-flex xs8>
-                                      <div>
-                                        <p>
-                                          <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
-                                          <i class="fa fa-clock-o"> 07-00 - 10.00 WIB</i><br>
-                                          <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
-                                        </p><br>
+                                <v-flex xs9>
+                                      <div style="padding-left: 10px;">
+                                        <div class="fa fa-users" style="text-align: left; line-height: normal; margin-bottom: 4px;">
+                                          DRESSCODE
+                                        </div>
+                                        <div class="fa fa-clock-o" style="text-align: left; line-height: normal; margin-bottom: 4px;">
+                                          07:00 - 10:00 WIB
+                                        </div>
+                                        <div class="fa fa-calendar" style="text-align: left; line-height: normal; margin-bottom: 4px;">
+                                          9 September 2018
+                                        </div>
+                                        <div class="fa fa-map-marker" style="text-align: left;">
+                                          UTC Hotel Semarang
+                                        </div>
                                       </div>
                                 </v-flex>
                               </v-layout>
@@ -276,7 +283,7 @@ export default {
 
 <style lang="stylus">
 .v-card
-  width 70%
+  width 73%
   box-shadow 0 2px 12px 0 rgba(0,0,0,.1)
   &.fls-form-group
     .card__title
