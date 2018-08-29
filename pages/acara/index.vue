@@ -1,18 +1,17 @@
 <template>
-<v-container fluid>
-  <img src="/images/background-unyu.png" class="bg-hero" alt="">
-  <v-layout justify-center>
+<v-container style="margin-left: -30px">
+  <v-layout>
     <v-flex md6>
       <v-layout>
-        <timeline>
+        <timeline timeline-theme="#ffbb00">
           <timeline-title class="pertama mb-4"><div class="headline"><b>HARI PERTAMA</b></div>Sabtu, 8 September 2018</timeline-title>
-          <timeline-item bg-color="#9dd8e0cc">
+          <timeline-item color="#ffbb00" line-color="#ffffff">
                   <v-flex xs12 >
                       <v-card>
-                      <v-chip style="margin-top: -16px;" class="ml-4 py-1 px-3" label color="primary" text-color="white">
-                      <div class="title">
-                          <v-icon left medium class="white--text">event</v-icon>
-                          <b>Welcoming Session</b>
+                      <v-chip style="margin-top: -16px; " class="ml-4 py-1 px-3" label color="primary" text-color="white">
+                      <div>
+                          <v-icon left small class="white--text">event</v-icon>
+                          <b style="font-size: 15px">Welcoming Session</b>  
                       </div>
                       </v-chip>
                       <v-card-text>
@@ -23,20 +22,17 @@
                                         <!-- <img style="image-size: 100px" src="https://futureleadersummit.org/2017/assets/img/agenda/pre_event.png"> -->
                                           <img
                                             src="https://futureleadersummit.org/2017/assets/img/agenda/welcoming_session.png"
-                                            height="200px"
+                                            height="110px"
                                           >
                                       </div>
                                 </v-flex>
                                 <v-flex xs8>
-                                      <div class="program-content">
-                                        <h5>
+                                      <div>
+                                        <p>
                                           <i class="fa fa-calendar"> Sabtu, 8 September 2018</i><br>
                                           <i class="fa fa-clock-o"> 07-00 - 10.00 WIB</i><br>
                                           <i class="fa fa-map-marker"> UTC Hotel Semarang</i><br>
-                                        </h5><br>
-                                        <p>Merupakan rangkaian pembukaan acara Future Leader Summit 2018 yang berisi
-                                        penyambutan delegasi pemuda dan penjelasan mengenai isu yang diangkat dan
-                                        rangkaian acara Future Leader Summit 2018.</p>
+                                        </p><br>
                                       </div>
                                 </v-flex>
                               </v-layout>
@@ -279,8 +275,8 @@ export default {
 </script>
 
 <style lang="stylus">
-.card
-  border-radius 50%
+.v-card
+  width 70%
   box-shadow 0 2px 12px 0 rgba(0,0,0,.1)
   &.fls-form-group
     .card__title

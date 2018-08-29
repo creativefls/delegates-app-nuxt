@@ -23,9 +23,9 @@ module.exports = {
   css: [
     'vuetify/src/stylus/main.styl'
   ],
-  router: {
-    middleware: ['auth']
-  },
+  // router: {
+  //   middleware: ['auth']
+  // },
   plugins: [
     '@/plugins/vuetify'
   ],
