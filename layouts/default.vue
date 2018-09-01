@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar fixed dense :scroll-off-screen="$route.path == '/'" app color="white">
+    <v-toolbar fixed dense app color="white">
       <v-btn
         @click="$router.go(-1)"
         icon
