@@ -3,20 +3,19 @@
     <v-layout justify-center class="white--text">
         <v-flex md10 text-xs-center>
             <div class="black--text"> 
-                <h1 class="Highline">
+                <h1 class="Highline red--text" style="font-size: 35px">
                     Pembicara
                 </h1>
                 <br class="my-2">
                 <img 
-                src="http://2018.futureleadersummit.org/images/pembicara1.png"
+                src="/pembicara/ga_pembicara1.png"
                 width="150px">
-                <h1 style="font-size: 24px" class="font-weight-hard">
-                    RHENALD KASALI
+                <h1 style="font-size: 24px" class="font-weight-hard indigo--text">
+                    FAYE SIMANJUNTAK
                     
                 </h1>
                 <h1 style="font-size: 20px">
-                    Praktisi Bisnis; <br>
-                    Founder Rumah Perubahan
+                    Co-Founder Rumah Faye
                 </h1>
                 <br class="my-2">                
             </div>
@@ -26,35 +25,49 @@
         <v-flex md10 text-xs-center>
             <div class="black--text">
                 <img 
-                src="http://2018.futureleadersummit.org/images/pembicara2.png"
+                src="/pembicara/ga_pembicara2.png"
                 width="150px">
-                <h1 style="font-size: 24px" class="font-weight-hard">
-                    ALAMANDA SHANTIKA
+                <h1 style="font-size: 24px" class="font-weight-hard indigo--text">
+                    IMAN SJAFEI
                     
                 </h1>
                 <h1 style="font-size: 20px">
-                    Founder Binar Academy
+                    CEO of <i>Asumsi.co</i> dan CFO of <i>Rekreasi.co</i>
                 </h1>
-                <br class="my-2">                
+                <br class="my-3">  
+                <h1 class="Highline red--text" style="font-size: 35px">                             
+                    Room
+                </h1>     
+                <br style="my-1">         
             </div>          
         </v-flex>
-    </v-layout>    
-    <v-layout justify-center class="white--text">
-        <v-flex md10 text-xs-center>
-            <div class="black--text">
-                <img 
-                src="http://2018.futureleadersummit.org/images/pembicara3.png"
-                width="150px">
-                <h1 style="font-size: 24px" class="font-weight-hard">
-                    CHRISTIAN RIJANTO
-                    
-                </h1>
-                <h1 style="font-size: 20px">
-                    Managing Partner & Founder Ismaya Group 
-                </h1>
-                <br class="my-2">                
-            </div>    
-        </v-flex>
+    </v-layout>
+    <v-layout 
+        justify-center 
+        class="fullwidth white--text"
+        v-for="pembicara in pembicara_rooms" 
+        :key="pembicara.title"
+        >
+            <v-flex md10 text-xs-center>
+                <div class="black--text">
+                    <div class="mb-1 py-1 pink--text">
+                        <h1 class="Highline" style="font-size: 30px">{{ pembicara.title }}</h1>
+                        <br>
+                    </div>
+                    <img 
+                        class="pembicara" 
+                        :src="pembicara.image"
+                        width="150px">
+                    <h1 style="font-size: 24px" class="font-weight-hard indigo--text">
+                        {{ pembicara.name }}
+                        
+                    </h1>
+                    <h1 style="font-size: 20px">
+                        {{ pembicara.description }}
+                    </h1>
+                    <br class="my-2">                
+                </div>          
+            </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -65,6 +78,56 @@ export default {
   components: { },
   data () {
     return {
+        pembicara_rooms: [
+            {
+                title: 'Human Capital',
+                image: '/pembicara/hc_pembicara1.png',
+                name: 'AGUNG BENZHARIE',
+                description: 'CEO & Co-Founder Warung Pintar',
+                bgColor: '#3883c7',
+                tangan: '/images/background-tangan.png'
+            },
+            {
+                title: 'Poverty',
+                image: '/pembicara/pov_pembicara1.png',
+                name: 'YOHANES SUGIHTONONUGROHO',
+                description: 'CEO & Co-Founder Crowde',
+                bgColor: '#FFA726',
+                tangan: '/images/background-tangan.png'
+            },
+            {
+                title: 'Urban Planing',
+                image: '/pembicara/up_pembicara1.png',
+                name: 'MARCO WIJAYAKUSUMA',
+                description: 'Founder dan Direktur RUJAK Center For Urban Studies',
+                bgColor: '#6D4C41',
+                tangan: '/images/background-tangan.png'
+            },
+            {
+                title: 'Education',
+                image: '/pembicara/edu_pembicara1.png',
+                name: 'WINASTWAN GORA SWAJATI',
+                description: 'Founder Kelase.com',
+                bgColor: '#FF7043',
+                tangan: '/images/background-tangan.png'
+            },
+            {
+                title: 'Digital',
+                image: '/pembicara/dig_pembicara1.png',
+                name: 'TEGUH HARMANDA',
+                description: 'COO Tokocrypto',
+                bgColor: '#FFEE58',
+                tangan: '/images/background-tangan.png'
+            },
+            {
+                title: 'Entrepreneurship',
+                image: '/pembicara/ent_pembicara1.png',
+                name: 'RANI SOEBIJANTORO',
+                description: 'Co-Founder Bookabuku',
+                bgColor: '#69F0AE',
+                tangan: ''
+            },
+        ]
     }
   },
   computed: {
@@ -75,18 +138,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-img.line-barcode {
-  width auto
-  height 256px
-}
-.section-insta
-  position relative
-  background: #2ecc71;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2def7e, #2ecc71);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2def7e, #2ecc71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+html
+  font-size: 16px
+  overflow-x: hidden
+  width: 100%
 
-.follow
-  padding 40px
+.fullwidth
+  min-width: 100%
+  
+.container
+    padding: 0
+    
 .card > *
   display block
   margin 0 auto
