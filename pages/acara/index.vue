@@ -31,7 +31,7 @@
                                 </v-flex>
                                 <v-flex xs9>
                                       <div style="padding-left: 10px;">
-                                        <div class="fa fa-users" style="text-align: left; line-height: normal; margin-bottom: 4px;">
+                                        <div class="fa fa-black-tie" style="text-align: left; line-height: normal; margin-bottom: 4px;">
                                           {{ acara.dresscode }}
                                         </div>
                                         <div class="fa fa-clock-o" style="text-align: left; line-height: normal; margin-bottom: 4px;">
@@ -84,7 +84,7 @@
                                 </v-flex>
                                 <v-flex xs9>
                                       <div style="padding-left: 10px;">
-                                        <div class="fa fa-users" style="text-align: left; line-height: normal; margin-bottom: 4px;">
+                                        <div class="fa fa-black-tie" style="text-align: left; line-height: normal; margin-bottom: 4px;">
                                           {{ acara.dresscode }}
                                         </div>
                                         <div class="fa fa-clock-o" style="text-align: left; line-height: normal; margin-bottom: 4px;">
