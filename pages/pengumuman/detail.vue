@@ -15,9 +15,10 @@
               src="https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg"
               class="img-beritaFull"              
             >
-            <v-card-text style="padding-right: 0; padding-top:0px; padding-bottom:0px">
+            <v-card-text class="text-xs-left" style="padding:0px">
               <!-- {{ pengumuman.beritaLengkap }} -->
               <!-- Isi Berita Lengkap -->
+              <br>
               <p>Pernahkah dimintai nomor rekening bank? Syukur kalau ingat nomornya, bagaimana kalau ternyata lupa? Mau tak mau transaksi yang dilakukan tidak bisa secepat yang diharapkan. Ya, mau bagaimana lagi. Dalam setiap transaksi yang menggunakan fasilitas bank, keberadaan nomor rekening dibutuhkan agar uang bisa segera dipindahkan dari rekening asal ke rekening tujuan.
 
 Sekadar pengingat, nomor rekening bank dimiliki setelah informasi-informasi personal yang diminta bank sebagai syarat untuk menjadi nasabah sudah teregistrasi secara sah di bank tersebut. Dengan kata lain, nomor yang satu ini bersifat pribadi dan penggunaannya mesti diketahui atas sepengetahuan pemiliknya.</p>
