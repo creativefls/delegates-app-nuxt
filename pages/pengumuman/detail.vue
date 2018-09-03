@@ -1,31 +1,27 @@
 <template>
   <v-layout column justify-center align-center>
-    <v-flex 
-        v-for="pengumuman in pengumumans" 
-        :key="pengumuman.title"
-        xs12 
-        sm8 
-        md6>
-      <v-card
-        height="175px">
-          <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">{{ pengumuman.title }}</h3>
+    <v-flex xs12 sm8 md6>
+      <v-card>
+          <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
+              <!-- {{ pengumuman.title }} -->
+              <!-- JUDUL -->
+              Jarak ATM terdekat - 83 m away
+        </h3>
+        <hr class="white">
           <v-container fluid grid-list-lg>
           <v-layout>
-          <v-flex xs3>
+          <v-flex class="text-xs-center">
             <img
-              :src="pengumuman.image"
-              height="90px"
-              class="img-berita"
+              src="https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg"
+              class="img-beritaFull"              
             >
-          </v-flex>
-          <v-flex xs9>
             <v-card-text style="padding-right: 0; padding-top:0px; padding-bottom:0px">
-              {{ pengumuman.beritaSingkat }} ...
+              <!-- {{ pengumuman.beritaLengkap }} -->
+              <!-- Isi Berita Lengkap -->
+              <p>Pernahkah dimintai nomor rekening bank? Syukur kalau ingat nomornya, bagaimana kalau ternyata lupa? Mau tak mau transaksi yang dilakukan tidak bisa secepat yang diharapkan. Ya, mau bagaimana lagi. Dalam setiap transaksi yang menggunakan fasilitas bank, keberadaan nomor rekening dibutuhkan agar uang bisa segera dipindahkan dari rekening asal ke rekening tujuan.
+
+Sekadar pengingat, nomor rekening bank dimiliki setelah informasi-informasi personal yang diminta bank sebagai syarat untuk menjadi nasabah sudah teregistrasi secara sah di bank tersebut. Dengan kata lain, nomor yang satu ini bersifat pribadi dan penggunaannya mesti diketahui atas sepengetahuan pemiliknya.</p>
             </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="success" outline nuxt to="/pengumuman/detail">Detail</v-btn>
-            </v-card-actions>
           </v-flex>
           </v-layout>
           </v-container>
@@ -67,6 +63,6 @@ export default {
 }
 </script>
 <style lang="stylus">
-.img-berita
-  max-width 75px
+.img-beritaFull
+  max-width 250px
 </style>
