@@ -17,10 +17,9 @@
       </v-layout>
     </v-container>
     <v-container fluid class="white mt-3">
-      <v-subheader class="px-0">Pengumuman terbaru</v-subheader>
+      <v-subheader class="px-0 primary--text">Pengumuman terbaru</v-subheader>
       <list-announcements/>
-      <v-layout>
-        <v-spacer></v-spacer>
+      <v-layout justify-center>
         <v-btn color="primary" outline to="/pengumuman">lihat semua</v-btn>
       </v-layout>
     </v-container>

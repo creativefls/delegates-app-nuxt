@@ -3,28 +3,27 @@
     <v-flex
       v-for="pengumuman in pengumumans"
       :key="pengumuman.title"
-      xs12
-      sm8
-      md6>
+      xs12>
       <v-card
-        height="175px">
-        <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">{{ pengumuman.title }}</h3>
+        height="176px">
+        <v-card-title class="pb-0">
+          <h3 class="font-weight-medium">{{ pengumuman.title }}</h3>
+        </v-card-title>
         <v-container fluid grid-list-lg>
           <v-layout>
-            <v-flex xs3>
+            <v-flex xs4>
               <img
                 :src="pengumuman.image"
-                height="90px"
                 class="img-berita"
               >
             </v-flex>
-            <v-flex xs9>
-              <v-card-text style="padding-right: 0; padding-top:0px; padding-bottom:0px">
+            <v-flex xs8>
+              <v-card-text class="pa-0">
                 {{ pengumuman.beritaSingkat }} ...
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="success" outline nuxt to="/pengumuman/detail">Detail</v-btn>
+                <v-btn small color="success" outline nuxt to="/pengumuman/detail">Detail</v-btn>
               </v-card-actions>
             </v-flex>
           </v-layout>
@@ -66,5 +65,6 @@ export default {
 
 <style lang="stylus">
 .img-berita
-  max-width 75px
+  max-width 100%
+  max-height 90px
 </style>
