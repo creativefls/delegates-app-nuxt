@@ -106,8 +106,6 @@
           </timeline-item>
         </timeline>
       </v-layout>
-    </v-flex>
-  </v-layout>
 </v-container>
 </template>
 
@@ -180,7 +178,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.v-card
+.v-card-timeline
   width 73%
   box-shadow 0 2px 12px 0 rgba(0,0,0,.1)
   &.fls-form-group

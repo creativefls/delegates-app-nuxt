@@ -63,10 +63,10 @@ export default {
       ],
       activeNavigation: 'recent',
       navs: [
-        { route: 'home', path: '/', icon: 'home' },
-        { route: 'acara', path: '/acara', icon: 'event' },
-        { route: 'pengumuman', path: '/pengumuman', icon: 'notifications' },
-        { route: 'profile', path: '/profile', icon: 'account_circle' },
+        { route: 'Home', path: '/', icon: 'home' },
+        { route: 'Acara', path: '/acara', icon: 'event' },
+        { route: 'Pengumuman', path: '/pengumuman', icon: 'notifications' },
+        { route: 'Profile', path: '/profile', icon: 'account_circle' },
       ]
     }
   },
