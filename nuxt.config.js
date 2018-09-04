@@ -21,7 +21,7 @@ module.exports = {
   },
   loading: { color: '#18bc97' },
   css: [
-    'vuetify/src/stylus/main.styl'
+    '~/assets/style/app.styl'
   ],
   // FIXME: nyalakan lagi proteksi auth
   // router: {
