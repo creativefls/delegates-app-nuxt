@@ -23,6 +23,7 @@ module.exports = {
   css: [
     'vuetify/src/stylus/main.styl'
   ],
+  // FIXME: nyalakan lagi proteksi auth
   // router: {
   //   middleware: ['auth']
   // },
