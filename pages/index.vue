@@ -34,9 +34,9 @@ export default {
   data () {
     return {
       menus: [
-        { name: 'pembicara', icon: 'assignment', path: '/pembicara' },
-        { name: 'acara', icon: 'assignment', path: '/acara' },
-        { name: 'daftar delegates', icon: 'assignment', path: '/' },
+        { name: 'pembicara', icon: 'speaker_notes', path: '/pembicara' },
+        { name: 'rangkaian acara', icon: 'event_note', path: '/acara' },
+        { name: 'daftar delegates', icon: 'group', path: '/' },
         { name: '', icon: 'help_outline', path: '/help' },
       ]
     }

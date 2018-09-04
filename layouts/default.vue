@@ -79,4 +79,7 @@ export default {
 <style lang="stylus">
 .v-toolbar__content
   justify-content space-between
+// TODO: cek lagi ini pastikan. di ios kiki containernya ga beres
+.container
+  position relative
 </style>
