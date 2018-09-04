@@ -2,12 +2,12 @@
   <v-app>
     <v-toolbar fixed dense app color="white">
       <v-btn
+        v-if="$route.path != '/'"
         @click="$router.go(-1)"
         icon
       >
         <v-icon v-html="'chevron_left'"></v-icon>
       </v-btn>
-      <!-- <v-toolbar-title v-text="title"></v-toolbar-title> -->
       <v-avatar
         tile
         class="ml-1"
@@ -19,12 +19,16 @@
           alt="FLS 2018"
         >
       </v-avatar>
-      <v-spacer></v-spacer>
       <v-btn
-        to="/help"
+        to="/profile"
         icon
       >
-        <v-icon>help_outline</v-icon>
+        <v-avatar size="32px" style="background-color:white;">
+          <img
+            :src="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Antu_im-invisible-user.svg/1024px-Antu_im-invisible-user.svg.png'"
+            alt="avatar"
+          >
+        </v-avatar>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -32,12 +36,6 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-bottom-nav :value="true" :active.sync="activeNavigation" fixed color="white" height="50">
-      <v-btn v-for="(nav, key) in navs" :key="key" :to="nav.path" flat color="primary" :value="nav.route">
-        <span>{{ nav.route }}</span>
-        <v-icon>{{ nav.icon }}</v-icon>
-      </v-btn>
-    </v-bottom-nav>
     <v-card height="36px" class="mt-3" flat color="transparent"></v-card>
     <v-snackbar
       :color="notification.type"
@@ -60,13 +58,6 @@ export default {
       items: [
         { icon: 'apps', title: 'Welcome', to: '/' },
         { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-      ],
-      activeNavigation: 'recent',
-      navs: [
-        { route: 'home', path: '/', icon: 'home' },
-        { route: 'acara', path: '/acara', icon: 'event' },
-        { route: 'pengumuman', path: '/pengumuman', icon: 'notifications' },
-        { route: 'profile', path: '/profile', icon: 'account_circle' },
       ]
     }
   },
@@ -86,3 +77,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.v-toolbar__content
+  justify-content space-between
+</style>
