@@ -32,9 +32,7 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <v-card height="36px" class="mt-3" flat color="transparent"></v-card>
     <v-snackbar
