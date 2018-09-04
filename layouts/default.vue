@@ -2,12 +2,12 @@
   <v-app>
     <v-toolbar fixed dense app color="white">
       <v-btn
+        v-if="$route.path != '/'"
         @click="$router.go(-1)"
         icon
       >
         <v-icon v-html="'chevron_left'"></v-icon>
       </v-btn>
-      <!-- <v-toolbar-title v-text="title"></v-toolbar-title> -->
       <v-avatar
         tile
         class="ml-1"
@@ -19,7 +19,6 @@
           alt="FLS 2018"
         >
       </v-avatar>
-      <v-spacer></v-spacer>
       <v-btn
         to="/profile"
         icon
@@ -78,3 +77,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.v-toolbar__content
+  justify-content space-between
+</style>
