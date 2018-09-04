@@ -3,22 +3,22 @@
     <v-flex xs12 sm8 md6>
       <v-card>
             <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">Pilih kelas yang kamu inginkan :</h3>
-            <v-container  
-            v-for="kelas in kelas" 
-            :key="kelas.namaKelas" 
+            <v-container
+            v-for="kelas in kelas"
+            :key="kelas.namaKelas"
             fluid grid-list-lg>
                 <v-layout>
-                    <v-flex xs3>
+                    <!-- <v-flex xs3>
                         <img
                         :src="kelas.imgKelas"
                         height="50px"
                         class="img-kelas"
                         >
-                    </v-flex>
+                    </v-flex> -->
                     <v-flex xs9>
                         <v-card-text style="padding:0px">
                         {{ kelas.namaKelas }}
-                        </v-card-text>   
+                        </v-card-text>
                     </v-flex>
                     <v-card-actions>
                         <v-spacer></v-spacer>
@@ -89,7 +89,7 @@ export default {
           namaKelas: 'Negotiation',
           imgKelas: '/acara/fla.png',
           linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
-        },  
+        },
       ]
     }
   }
