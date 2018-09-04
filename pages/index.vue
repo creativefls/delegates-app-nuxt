@@ -3,10 +3,16 @@
     <v-container fluid grid-list-sm class="white">
       <v-layout row wrap>
         <v-flex v-for="(menu, index) in menus" :key="index" xs4 class="text-xs-center my-0 py-0">
-          <v-btn icon dark color="primary" fab>
+          <v-btn icon dark color="primary" fab :to="menu.path">
             <v-icon v-html="menu.icon"></v-icon>
           </v-btn>
           <p>{{ menu.name }}</p>
+        </v-flex>
+        <v-flex xs4 class="text-xs-center my-0 py-0">
+          <v-btn icon dark color="primary" fab>
+            <v-icon>apps</v-icon>
+          </v-btn>
+          <p></p>
         </v-flex>
       </v-layout>
     </v-container>
@@ -15,7 +21,7 @@
       <list-announcements/>
       <v-layout>
         <v-spacer></v-spacer>
-        <v-btn color="primary" outline>lihat semua</v-btn>
+        <v-btn color="primary" outline to="/pengumuman">lihat semua</v-btn>
       </v-layout>
     </v-container>
   </div>
@@ -28,11 +34,10 @@ export default {
   data () {
     return {
       menus: [
-        { name: 'discovery panel', icon: 'assignment', path: '' },
-        { name: 'makanan', icon: 'assignment', path: '' },
-        { name: 'vote', icon: 'assignment', path: '' },
-        { name: 'discovery panel', icon: 'assignment', path: '' },
-        { name: 'discovery panel', icon: 'assignment', path: '' },
+        { name: 'pembicara', icon: 'assignment', path: '/pembicara' },
+        { name: 'acara', icon: 'assignment', path: '/acara' },
+        { name: 'daftar delegates', icon: 'assignment', path: '/' },
+        { name: '', icon: 'help_outline', path: '/help' },
       ]
     }
   },
