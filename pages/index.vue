@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid grid-list-sm class="white">
+    <v-container fluid grid-list-sm class="white pt-4">
       <v-layout row wrap>
         <v-flex v-for="(menu, index) in menus" :key="index" xs4 class="text-xs-center my-0 py-0">
           <v-btn icon dark color="primary" fab :to="menu.path">
@@ -24,21 +24,30 @@
         <v-btn color="primary" outline to="/pengumuman">lihat semua</v-btn>
       </v-layout>
     </v-container>
-    <v-bottom-sheet v-model="sheet">
+    <v-bottom-sheet v-model="sheet" lazy>
       <v-list>
-        <v-subheader>Open in</v-subheader>
+        <v-subheader>Aku mau...</v-subheader>
         <v-list-tile
+          :disabled="tile.disabled"
           v-for="tile in tiles"
           :key="tile.title"
           @click="sheet = false"
+          :to="tile.path"
         >
           <v-list-tile-avatar>
-            <v-avatar size="32px" tile>
-              <img
-                :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
-                :alt="tile.title"
-              >
-            </v-avatar>
+             <v-badge
+              :value="tile.disabled"
+              color="warning"
+              overlap
+            >
+              <v-icon v-if="tile.disabled" slot="badge" dark small>timelapse</v-icon>
+              <v-avatar size="32px" tile>
+                <img
+                  :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
+                  :alt="tile.title"
+                >
+              </v-avatar>
+            </v-badge>
           </v-list-tile-avatar>
           <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
         </v-list-tile>
@@ -57,15 +66,13 @@ export default {
         { name: 'pembicara', icon: 'speaker_notes', path: '/pembicara' },
         { name: 'rangkaian acara', icon: 'event_note', path: '/acara' },
         { name: 'daftar delegates', icon: 'group', path: '/' },
-        { name: '', icon: 'help_outline', path: '/help' },
+        { name: 'tentang', icon: 'help_outline', path: '/help' },
       ],
       sheet: false,
       tiles: [
-        { img: 'keep.png', title: 'Keep' },
-        { img: 'inbox.png', title: 'Inbox' },
-        { img: 'hangouts.png', title: 'Hangouts' },
-        { img: 'messenger.png', title: 'Messenger' },
-        { img: 'google.png', title: 'Google+' }
+        { img: 'keep.png', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: false },
+        { img: 'inbox.png', title: 'Pilih sarapan', path: '/'  },
+        { img: 'hangouts.png', title: 'Vote', path: '/' , disabled: true },
       ]
     }
   },
