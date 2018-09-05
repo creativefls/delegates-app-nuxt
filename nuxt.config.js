@@ -24,9 +24,9 @@ module.exports = {
     '~/assets/style/app.styl'
   ],
   // FIXME: nyalakan lagi proteksi auth
-  // router: {
-  //   middleware: ['auth']
-  // },
+  router: {
+    middleware: ['auth']
+  },
   plugins: [
     '@/plugins/vuetify'
   ],
@@ -54,7 +54,7 @@ module.exports = {
     },
     redirect: {
       login: '/auth/login',
-      logout: '/',
+      logout: '/auth/logout',
       callback: '/auth/login',
       user: '/profile',
       home: '/',
