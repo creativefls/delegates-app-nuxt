@@ -63,15 +63,15 @@ export default {
   data () {
     return {
       menus: [
-        { name: 'pembicara', icon: 'speaker_notes', path: '/pembicara' },
-        { name: 'rangkaian acara', icon: 'event_note', path: '/acara' },
-        { name: 'daftar delegates', icon: 'group', path: '/' },
-        { name: 'tentang', icon: 'help_outline', path: '/help' },
+        { name: 'Pembicara', icon: 'speaker_notes', path: '/pembicara' },
+        { name: 'Rangkaian Acara', icon: 'event_note', path: '/acara' },
+        { name: 'Daftar Delegates', icon: 'group', path: '/' },
+        { name: 'Tentang', icon: 'help_outline', path: '/help' },
       ],
       sheet: false,
       tiles: [
         { img: 'keep.png', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: false },
-        { img: 'inbox.png', title: 'Pilih sarapan', path: '/'  },
+        { img: 'inbox.png', title: 'Pilih Sarapan', path: '/sarapan'  },
         { img: 'hangouts.png', title: 'Vote', path: '/' , disabled: true },
       ]
     }

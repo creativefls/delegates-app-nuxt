@@ -2,7 +2,9 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <v-card>
-            <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">Pilih kelas yang kamu inginkan :</h3>
+            <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
+              Pilih kelas yang kamu inginkan :
+            </h3>
             <v-container  
             v-for="kelas in kelas" 
             :key="kelas.namaKelas" 
@@ -16,7 +18,7 @@
                         >
                     </v-flex>
                     <v-flex xs9>
-                        <v-card-text style="padding:0px">
+                        <v-card-text class="subheading" style="padding:0px">
                         {{ kelas.namaKelas }}
                         </v-card-text>   
                     </v-flex>
