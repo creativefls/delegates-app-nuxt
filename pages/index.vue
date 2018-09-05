@@ -1,48 +1,81 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo/>
-        <vuetify-logo/>
-      </div>
-      <v-card>
-        <v-card-title class="headline">{{ test }}</v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br>
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <div>
+    <v-container fluid grid-list-sm class="white pt-4">
+      <v-layout row wrap>
+        <v-flex v-for="(menu, index) in menus" :key="index" xs4 class="text-xs-center my-0 py-0">
+          <v-btn icon dark color="primary" fab :to="menu.path">
+            <v-icon v-html="menu.icon"></v-icon>
+          </v-btn>
+          <p>{{ menu.name }}</p>
+        </v-flex>
+        <v-flex xs4 class="text-xs-center my-0 py-0">
+          <v-btn @click="sheet = true" icon dark color="primary" fab>
+            <v-icon>apps</v-icon>
+          </v-btn>
+          <p></p>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container fluid class="white mt-3">
+      <v-subheader class="px-0">Pengumuman terbaru</v-subheader>
+      <list-announcements/>
+      <v-layout>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" outline to="/pengumuman">lihat semua</v-btn>
+      </v-layout>
+    </v-container>
+    <v-bottom-sheet v-model="sheet" lazy>
+      <v-list>
+        <v-subheader>Aku mau...</v-subheader>
+        <v-list-tile
+          :disabled="tile.disabled"
+          v-for="tile in tiles"
+          :key="tile.title"
+          @click="sheet = false"
+          :to="tile.path"
+        >
+          <v-list-tile-avatar>
+             <v-badge
+              :value="tile.disabled"
+              color="warning"
+              overlap
+            >
+              <v-icon v-if="tile.disabled" slot="badge" dark small>timelapse</v-icon>
+              <v-avatar size="32px" tile>
+                <img
+                  :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
+                  :alt="tile.title"
+                >
+              </v-avatar>
+            </v-badge>
+          </v-list-tile-avatar>
+          <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-bottom-sheet>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import ListAnnouncements from "@/components/partials/ListAnnouncements";
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
   data () {
     return {
-      test: process.env.apiUrl
+      menus: [
+        { name: 'pembicara', icon: 'speaker_notes', path: '/pembicara' },
+        { name: 'rangkaian acara', icon: 'event_note', path: '/acara' },
+        { name: 'daftar delegates', icon: 'group', path: '/' },
+        { name: 'tentang', icon: 'help_outline', path: '/help' },
+      ],
+      sheet: false,
+      tiles: [
+        { img: 'keep.png', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: false },
+        { img: 'inbox.png', title: 'Pilih sarapan', path: '/'  },
+        { img: 'hangouts.png', title: 'Vote', path: '/' , disabled: true },
+      ]
     }
-  }
+  },
+  components: { ListAnnouncements }
 }
 </script>
