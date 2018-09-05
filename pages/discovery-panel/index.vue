@@ -18,7 +18,7 @@
                         >
                     </v-flex>
                     <v-flex xs9>
-                        <v-card-text class="subheading" style="padding:0px">
+                        <v-card-text class="subheading font-weight-bold" style="padding:0px">
                         {{ kelas.namaKelas }}
                         </v-card-text>   
                     </v-flex>

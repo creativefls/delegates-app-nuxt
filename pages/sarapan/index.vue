@@ -18,7 +18,7 @@
                         >
                     </v-flex>
                     <v-flex xs7>
-                        <v-card-text class="subheading" style="padding:0px">
+                        <v-card-text class="subheading font-weight-bold" style="padding:0px">
                         {{ food.namaMakanan }}
                         </v-card-text>   
                     </v-flex>
