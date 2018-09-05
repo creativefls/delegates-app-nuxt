@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar fixed dense app color="white">
       <v-btn
-        v-if="$route.path != '/'"
+        v-if="$route.path != '/' && $auth.loggedIn"
         @click="$router.go(-1)"
         icon
       >
@@ -20,12 +20,13 @@
         >
       </v-avatar>
       <v-btn
+        v-if="$auth.loggedIn && $auth.user"
         to="/profile"
         icon
       >
         <v-avatar size="32px" style="background-color:white;">
           <img
-            :src="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Antu_im-invisible-user.svg/1024px-Antu_im-invisible-user.svg.png'"
+            :src="$auth.user.info.avatar"
             alt="avatar"
           >
         </v-avatar>
