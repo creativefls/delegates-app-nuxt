@@ -115,7 +115,7 @@ export default {
                 title: 'Digital',
                 image: '/pembicara/dig_pembicara1.png',
                 name: 'TEGUH HARMANDA',
-                description: 'COO Tokocrypto',
+                description: 'CCO Tokocrypto',
                 bgColor: '#FFEE58',
                 tangan: '/images/background-tangan.png'
             },
