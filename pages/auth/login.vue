@@ -36,6 +36,9 @@
           </form>
         </v-card-text>
       </v-card>
+      <p class="text-xs-center mt-4">
+        <a href="https://aku.nusantaramuda.org">Bikin akun sini</a>
+      </p>
     </v-flex>
   </v-layout>
 </template>
