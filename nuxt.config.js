@@ -69,6 +69,7 @@ module.exports = {
     start_url: '/'
   },
   env: {
+    version: pkg.version,
     apiUrl: process.env.API_URL || 'http://wrongurl.com'
   },
   generate: {

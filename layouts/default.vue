@@ -36,6 +36,9 @@
       <nuxt />
     </v-content>
     <v-card height="36px" class="mt-3" flat color="transparent"></v-card>
+    <v-footer class="justify-center">
+      v{{ appVersion }} - Crafted with ❤ by <a href="https://github.com/creativefls">creativefls</a>
+    </v-footer>
     <v-snackbar
       :color="notification.type"
       multi-line
@@ -62,6 +65,9 @@ export default {
   },
   computed: {
     ...mapState(['notification']),
+    appVersion () {
+      return process.env.version
+    },
     snackbar: {
       get() {
         return this.notification.active;
