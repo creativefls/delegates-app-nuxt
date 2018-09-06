@@ -75,7 +75,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      getAllDelegates: 'delegates/getAllDelegates'
+      getAllDelegates: 'delegates/getAllDelegates',
+      notify: 'notify'
     }),
     fetchDelegates () {
       this.loading = true
@@ -85,6 +86,7 @@ export default {
         this.items = response
         this.loading = false
       }).catch(err => {
+        this.notify({ type: 'error', message: err.message })
         this.loading = false
       })
     }

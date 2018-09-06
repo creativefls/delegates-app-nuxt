@@ -22,6 +22,7 @@
     <v-container class="white mt-2">
       <v-list>
         <v-subheader class="primary--text">Pengaturan</v-subheader>
+        <v-divider></v-divider>
         <v-list-tile v-for="(setting, index) in settingMenus" :key="index" :to="setting.to">
           <v-list-tile-content>
             <v-list-tile-title :class="setting.class">{{ setting.text }}</v-list-tile-title>
