@@ -24,9 +24,9 @@ module.exports = {
     '~/assets/style/app.styl'
   ],
   // FIXME: nyalakan lagi proteksi auth
-  router: {
-    middleware: ['auth']
-  },
+  // router: {
+  //   middleware: ['auth']
+  // },
   plugins: [
     '@/plugins/vuetify'
   ],
