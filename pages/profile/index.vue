@@ -43,7 +43,7 @@ export default {
       selectedFile: null,
       loadingUpload: false,
       settingMenus: [
-        { text: 'Ubah Password', to: '/auth/change-password', class: '' },
+        // { text: 'Ubah Password', to: '/auth/change-password', class: '' },
         { text: 'Logout', to: '/auth/logout', class: 'error--text' },
       ]
     }
