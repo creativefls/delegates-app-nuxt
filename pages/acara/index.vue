@@ -5,17 +5,17 @@
       <v-layout>
         <timeline timeline-theme="#ffbb00">
           <timeline-title class="pertama mb-4"><div class="headline"><b>HARI PERTAMA</b></div>Sabtu, 8 September 2018</timeline-title>
-          <timeline-item 
-            color="#ffbb00" 
+          <timeline-item
+            color="#ffbb00"
             line-color="#ffffff"
-            v-for="acara in acara_d1" 
+            v-for="acara in acara_d1"
             :key="acara.title">
                   <v-flex xs12 >
                       <v-card style="width: 310px">
                       <v-chip style="margin-top: -16px; " class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div>
                           <v-icon left small class="white--text">event</v-icon>
-                          <b style="font-size: 15px">{{ acara.title }}</b>  
+                          <b style="font-size: 15px">{{ acara.title }}</b>
                       </div>
                       </v-chip>
                       <v-card-text>
@@ -57,18 +57,18 @@
   </v-layout>
   <v-layout>
         <timeline timeline-theme="#ffbb00">
-          <timeline-title class="kedua mb-4"><div class="headline"><b>HARI KEDUA</b></div>Minggu, 9 September 2018</timeline-title>          
-          <timeline-item 
-            color="#ffbb00" 
+          <timeline-title class="kedua mb-4"><div class="headline"><b>HARI KEDUA</b></div>Minggu, 9 September 2018</timeline-title>
+          <timeline-item
+            color="#ffbb00"
             line-color="#ffffff"
-            v-for="acara in acara_d2" 
+            v-for="acara in acara_d2"
             :key="acara.title">
                   <v-flex xs12 >
                       <v-card style="width: 310px">
                       <v-chip style="margin-top: -16px; " class="ml-4 py-1 px-3" label color="primary" text-color="white">
                       <div>
                           <v-icon left small class="white--text">event</v-icon>
-                          <b style="font-size: 15px">{{ acara.title }}</b>  
+                          <b style="font-size: 15px">{{ acara.title }}</b>
                       </div>
                       </v-chip>
                       <v-card-text>
@@ -157,7 +157,7 @@ export default {
       acara_d2: [
         {
           title: 'Discovery Panel',
-          dresscode: 'Signature Tee FLS',
+          dresscode: 'Batik',
           jam: '07:00 - 11:20',
           tanggal: '9 September 2018',
           lokasi: 'Kota Lama',
@@ -165,7 +165,7 @@ export default {
         },
         {
           title: 'Grand Summit',
-          dresscode: 'Signature Tee FLS',
+          dresscode: 'Batik',
           jam: '11:30 - Selesai',
           tanggal: '9 September 2018',
           lokasi: 'Quest Hotel',
