@@ -9,6 +9,7 @@ export const actions = {
     let response = await this.$axios.$get('https://api.futureleadersummit.org/api/registrars', {
       params: {
         filter: {
+          order: 'fullname ASC',
           where: {
             and: [
               { acceptanceStatus: 2 },
