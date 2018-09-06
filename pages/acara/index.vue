@@ -160,7 +160,7 @@ export default {
           dresscode: 'Signature Tee FLS',
           jam: '07:00 - 11:20',
           tanggal: '9 September 2018',
-          lokasi: 'UTC Hotel Semarang',
+          lokasi: 'Kota Lama',
           icon: '/acara/discovery_panel.png',
         },
         {
@@ -168,7 +168,7 @@ export default {
           dresscode: 'Signature Tee FLS',
           jam: '11:30 - Selesai',
           tanggal: '9 September 2018',
-          lokasi: 'UTC Hotel Semarang',
+          lokasi: 'Quest Hotel',
           icon: '/acara/grand_summit.png',
         }
       ]
