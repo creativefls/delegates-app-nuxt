@@ -6,7 +6,7 @@ export const mutations = {
 
 export const actions = {
   async getAllDelegates ({ dispatch }, filter) {
-    let response = await this.$axios.$get('http://128.199.72.101:3000/api/registrars', {
+    let response = await this.$axios.$get('https://api.futureleadersummit.org/api/registrars', {
       params: {
         filter: {
           where: {
