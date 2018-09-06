@@ -11,7 +11,8 @@
       </v-avatar>
     </v-layout>
     <v-layout justify-center>
-      <v-btn color="primary" small>ganti foto</v-btn>
+      <input ref="avatar" type="file" @change="onFileChanged" style="display: none;">
+      <v-btn color="primary" @click="$refs.avatar.click()" small :loading="loadingUpload">ganti foto</v-btn>
     </v-layout>
 
     <v-container class="white">
@@ -34,14 +35,48 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data () {
     return {
+      selectedFile: null,
+      loadingUpload: false,
       settingMenus: [
         { text: 'Ubah Password', to: '/auth/change-password', class: '' },
         { text: 'Logout', to: '/auth/logout', class: 'error--text' },
       ]
     }
   },
+  methods: {
+    ...mapActions({
+      notify: 'notify'
+    }),
+    onFileChanged (event) {
+      this.selectedFile = event.target.files[0]
+      this.onUpload()
+    },
+    async onUpload() {
+      this.loadingUpload = true
+      let formData = new FormData()
+      formData.append('file', this.selectedFile)
+      formData.append('filename', this.selectedFile.name)
+
+      try {
+        let image = await this.$axios.$post('http://spgdt.setyadhiputra.com:8080/digisar-service/image/submit', formData)
+        console.log('image', image);
+
+        let response = await this.$axios.$patch(`/api/users/${ this.$auth.user.id }/info`, {
+          avatar: image.data
+        })
+        await this.$auth.fetchUser()
+        this.notify({ type: 'success', message: 'Sukses update foto' });
+        this.loadingUpload = false
+      } catch (error) {
+        this.notify({ type: 'error', message: error.message });
+        this.loadingUpload = false
+      }
+    }
+  }
 }
 </script>
