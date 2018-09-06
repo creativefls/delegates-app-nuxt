@@ -28,9 +28,9 @@
               avatar
             >
               <!-- ripple -->
-              <v-list-tile-content>
-                <v-list-tile-title>{{ item.fullname }}</v-list-tile-title>
-                <v-list-tile-sub-title style="text-transform: capitalize;">{{ item.institution.toLowerCase() }}</v-list-tile-sub-title>
+              <v-list-tile-content style="text-transform: capitalize;">
+                <v-list-tile-title>{{ item.fullname.toLowerCase() }}</v-list-tile-title>
+                <v-list-tile-sub-title>{{ item.institution.toLowerCase() }}</v-list-tile-sub-title>
               </v-list-tile-content>
 
               <!-- <v-list-tile-action>
