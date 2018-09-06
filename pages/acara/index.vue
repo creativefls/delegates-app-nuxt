@@ -41,7 +41,7 @@
                                           {{ acara.tanggal }}
                                         </div>
                                         <div class="fa fa-map-marker" style="text-align: left;">
-                                          {{ acara.lokasi }}
+                                          <a :href="acara.linkLokasi">  {{acara.lokasi }}</a>                                          
                                         </div>
                                       </div>
                                 </v-flex>
@@ -94,7 +94,7 @@
                                           {{ acara.tanggal }}
                                         </div>
                                         <div class="fa fa-map-marker" style="text-align: left;">
-                                          {{ acara.lokasi }}
+                                          <a :href="acara.linkLokasi">  {{acara.lokasi }}  </a>
                                         </div>
                                       </div>
                                 </v-flex>
@@ -128,6 +128,7 @@ export default {
           tanggal: '8 September 2018',
           lokasi: 'UTC Hotel Semarang',
           icon: '/acara/welcoming_session.png',
+          linkLokasi: 'https://goo.gl/maps/SWtNzo5g13o'
         },
         {
           title: 'Ideation Lab',
@@ -136,6 +137,7 @@ export default {
           tanggal: '8 September 2018',
           lokasi: 'UTC Hotel Semarang',
           icon: '/acara/ideation_lab.png',
+          linkLokasi: 'https://goo.gl/maps/SWtNzo5g13o'          
         },
         {
           title: 'Future Leader in Action',
@@ -144,6 +146,7 @@ export default {
           tanggal: '8 September 2018',
           lokasi: 'UTC Hotel Semarang',
           icon: '/acara/fla.png',
+          linkLokasi: 'https://goo.gl/maps/SWtNzo5g13o'          
         },
         {
           title: 'Gala Future Leader',
@@ -152,6 +155,7 @@ export default {
           tanggal: '8 September 2018',
           lokasi: 'UTC Hotel Semarang',
           icon: '/acara/gala_fl.png',
+          linkLokasi: 'https://goo.gl/maps/SWtNzo5g13o'          
         }
       ],
       acara_d2: [
@@ -162,6 +166,7 @@ export default {
           tanggal: '9 September 2018',
           lokasi: 'Kota Lama',
           icon: '/acara/discovery_panel.png',
+          linkLokasi: 'https://goo.gl/maps/tMFmoH1LKXq'                    
         },
         {
           title: 'Grand Summit',
@@ -170,6 +175,7 @@ export default {
           tanggal: '9 September 2018',
           lokasi: 'Quest Hotel',
           icon: '/acara/grand_summit.png',
+          linkLokasi: 'https://goo.gl/maps/zqx7MNK99kt'
         }
       ]
     }
