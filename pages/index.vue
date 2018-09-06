@@ -64,7 +64,7 @@ export default {
       menus: [
         { name: 'Pembicara', icon: 'speaker_notes', path: '/pembicara' },
         { name: 'Rangkaian Acara', icon: 'event_note', path: '/acara' },
-        { name: 'Daftar Delegates', icon: 'group', path: '/' },
+        { name: 'Daftar Delegates', icon: 'group', path: '/list-delegates' },
         { name: 'Tentang', icon: 'help_outline', path: '/help' },
       ],
       sheet: false,
