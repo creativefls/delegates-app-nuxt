@@ -71,7 +71,7 @@ export default {
       tiles: [
         { img: 'keep.png', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: false },
         { img: 'inbox.png', title: 'Pilih Sarapan', path: '/sarapan'  },
-        { img: 'hangouts.png', title: 'Vote', path: '/' , disabled: true },
+        { img: 'hangouts.png', title: 'Vote', path: '/vote' , disabled: true },
       ]
     }
   },
