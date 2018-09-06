@@ -42,7 +42,7 @@
     <v-snackbar
       :color="notification.type"
       multi-line
-      bottom
+      top
       right
       v-model="snackbar">{{ notification.message }}
       <v-btn dark flat @click="TOGGLE_NOTIFICATION">OK</v-btn>
