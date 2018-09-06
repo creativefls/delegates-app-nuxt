@@ -3,7 +3,7 @@
     <v-container fluid grid-list-sm class="white pt-4">
       <v-layout row wrap>
         <v-flex v-for="(menu, index) in menus" :key="index" xs4 class="text-xs-center my-0 py-0">
-          <v-btn icon dark color="primary" fab :to="menu.path">
+          <v-btn icon dark :color="menu.color" fab :to="menu.path">
             <v-icon v-html="menu.icon"></v-icon>
           </v-btn>
           <p>{{ menu.name }}</p>
@@ -41,10 +41,7 @@
             >
               <v-icon v-if="tile.disabled" slot="badge" dark small>timelapse</v-icon>
               <v-avatar size="32px" tile>
-                <img
-                  :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
-                  :alt="tile.title"
-                >
+                <v-icon :color="tile.color">{{ tile.icon }}</v-icon>
               </v-avatar>
             </v-badge>
           </v-list-tile-avatar>
@@ -62,16 +59,16 @@ export default {
   data () {
     return {
       menus: [
-        { name: 'Pembicara', icon: 'speaker_notes', path: '/pembicara' },
-        { name: 'Rangkaian Acara', icon: 'event_note', path: '/acara' },
-        { name: 'Daftar Delegates', icon: 'group', path: '/list-delegates' },
-        { name: 'Tentang', icon: 'help_outline', path: '/help' },
+        { name: 'Pembicara', icon: 'speaker_notes', color: 'warning', path: '/pembicara' },
+        { name: 'Rangkaian Acara', icon: 'event_note', color: 'error', path: '/acara' },
+        { name: 'Daftar Delegates', icon: 'group', color: 'info', path: '/list-delegates' },
+        { name: 'Tentang', icon: 'help_outline', color: 'secondary', path: '/help' },
       ],
       sheet: false,
       tiles: [
-        { img: 'keep.png', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: true },
-        { img: 'inbox.png', title: 'Pilih Sarapan', path: '/sarapan', disabled: true },
-        { img: 'hangouts.png', title: 'Vote', path: '/vote' , disabled: true },
+        { icon: 'dashboard', color: 'success', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: true },
+        { icon: 'fastfood', color: 'info', title: 'Pilih Sarapan', path: '/sarapan', disabled: true },
+        { icon: 'how_to_vote', color: 'error', title: 'Vote', path: '/vote' , disabled: true },
       ]
     }
   },
