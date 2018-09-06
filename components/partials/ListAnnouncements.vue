@@ -1,8 +1,11 @@
 <template>
-  <v-layout column justify-center align-center>
+  <v-layout wrap justify-center align-center>
     <v-flex
       v-for="pengumuman in pengumumans"
       :key="pengumuman.title"
+      class="px-2"
+      md4
+      sm6
       xs12>
       <v-card
         height="176px">
