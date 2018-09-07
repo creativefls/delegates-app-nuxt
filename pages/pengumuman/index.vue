@@ -1,6 +1,6 @@
 <template>
   <div>
-    <list-announcements/>
+    <list-announcements :items="announcements"/>
     <v-btn
       v-if="isAdmin"
       color="primary"
@@ -60,7 +60,8 @@ export default {
         content: '',
         scope: 'fls2018',
         links: []
-      }
+      },
+      announcements: []
     }
   },
   computed: {
@@ -70,19 +71,32 @@ export default {
   },
   methods: {
     ...mapActions({
-      createAnnouncement: 'announcement/createAnnouncement'
+      notify: 'notify',
+      createAnnouncement: 'announcement/createAnnouncement',
+      getAllAnnouncements: 'announcement/getAllAnnouncements'
     }),
     sendAnnouncement () {
       this.loadingSend = true
       this.createAnnouncement(this.newItem).then(res => {
         console.log('asdf', res);
+        this.fetchAnnouncements()
         this.dialog = false
         this.loadingSend = false
       }).catch(err => {
         console.log('eror', err);
         this.loadingSend = false
       })
+    },
+    fetchAnnouncements () {
+      this.getAllAnnouncements().then(res => {
+        this.announcements = res
+      }).catch(err => {
+        this.notify({ type: 'error', message: err.message });
+      })
     }
+  },
+  mounted () {
+    this.fetchAnnouncements()
   },
   components: { ListAnnouncements }
 }
