@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     announcements () {
-      return this.partial ? this.items.slice(0,2) : this.items
+      return this.partial ? this.items.slice(0,3) : this.items
     }
   }
 }

@@ -20,7 +20,7 @@
     <!-- FIXME: nyalakan ini lagi nanti buat release beneran -->
     <v-container fluid class="white mt-3">
       <v-subheader class="px-0 primary--text">Pengumuman terbaru</v-subheader>
-      <list-announcements/>
+      <list-announcements :items="announcements" partial />
       <v-layout justify-center>
         <v-btn color="primary" outline to="/pengumuman">lihat semua</v-btn>
       </v-layout>
@@ -57,10 +57,12 @@
 
 <script>
 import ListAnnouncements from "@/components/partials/ListAnnouncements";
+import { mapActions } from 'vuex'
 
 export default {
   data () {
     return {
+      announcements: [],
       menus: [
         { name: 'Pembicara', icon: 'speaker_notes', color: 'warning', path: '/pembicara' },
         { name: 'Rangkaian Acara', icon: 'event_note', color: 'error', path: '/acara' },
@@ -76,6 +78,21 @@ export default {
         // { icon: 'how_to_vote', color: 'error', title: 'Vote', path: '/vote' , disabled: true },
       ]
     }
+  },
+  methods: {
+    ...mapActions({
+      getAllAnnouncements: 'announcement/getAllAnnouncements'
+    }),
+    fetchAnnouncements () {
+      this.getAllAnnouncements().then(res => {
+        this.announcements = res
+      }).catch(err => {
+        this.notify({ type: 'error', message: err.message });
+      })
+    }
+  },
+  mounted () {
+    this.fetchAnnouncements()
   },
   components: { ListAnnouncements }
 }
