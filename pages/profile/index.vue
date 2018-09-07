@@ -11,7 +11,7 @@
       </v-avatar>
     </v-layout>
     <v-layout justify-center>
-      <input ref="avatar" type="file" @change="onFileChanged" style="display: none;">
+      <input ref="avatar" type="file" accept="image/*" multiple @change="onFileChanged" style="display: none;">
       <v-btn color="primary" @click="$refs.avatar.click()" small :loading="loadingUpload">ganti foto</v-btn>
     </v-layout>
 
