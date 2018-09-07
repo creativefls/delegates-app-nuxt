@@ -59,8 +59,7 @@ module.exports = {
       callback: '/auth/login',
       user: '/profile',
       home: '/',
-    },
-    resetOnError: true,
+    }
   },
   oneSignal: {
     cdn: true,
