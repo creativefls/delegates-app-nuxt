@@ -35,6 +35,7 @@
             </v-flex>
             <v-card-actions>
                 <v-spacer></v-spacer>
+                <v-chip small label> {{ infoClass[kelas.keyName] }} / 24 </v-chip>
                 <v-btn color="success" small outline @click="selectThisClass(kelas.namaKelas)">Pilih</v-btn>
             </v-card-actions>
           </v-layout>
@@ -53,56 +54,47 @@ export default {
     return {
       selectedClass: null,
       loadingGet: false,
+      infoClass: {},
       kelas: [
         {
           namaKelas: 'Design Thinking',
-          imgKelas: '/acara/discovery_panel.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'designThinking'
         },
         {
           namaKelas: 'Virtual Collaboration',
-          imgKelas: '/acara/fla.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'virtualCollaboration'
         },
         {
           namaKelas: 'Personal Branding',
-          imgKelas: '/acara/gala_fl.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'personalBranding'
         },
         {
           namaKelas: 'People Management',
-          imgKelas: '/acara/grand_summit.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'peopleManagement'
         },
         {
           namaKelas: 'Digital Marketing',
-          imgKelas: '/acara/ideation_lab.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'digitalMarketing'
         },
         {
           namaKelas: 'Emotional Intelligence',
-          imgKelas: '/acara/welcoming_session.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'emotionalIntelligence'
         },
         {
           namaKelas: 'Cultural Intelligence',
-          imgKelas: '/acara/gala_fl.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'culturalIntelligence'
         },
         {
-          namaKelas: 'Judgement and decision-making',
-          imgKelas: '/acara/discovery_panel.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          namaKelas: 'Judgement and Decision Making',
+          keyName: 'judgement'
         },
         {
           namaKelas: 'Financial Planning',
-          imgKelas: '/acara/welcoming_session.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'financial'
         },
         {
           namaKelas: 'Negotiation',
-          imgKelas: '/acara/fla.png',
-          linkTo: 'https://uangindonesia.com/wp-content/uploads/2017/07/memasukkan-PIN-ATM-harus-ditutupi-tangan.jpg'
+          keyName: 'negotiation'
         },
       ]
     }
@@ -130,7 +122,8 @@ export default {
       this.loadingGet = true
       this.getMyClassroom().then(res => {
         console.log('kelas', res);
-        this.selectedClass = res
+        this.infoClass = res
+        this.selectedClass = res.myClass
         this.loadingGet = false
       }).catch(err => {
         console.log('error kelas', err);
