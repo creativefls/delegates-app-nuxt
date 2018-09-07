@@ -34,6 +34,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/dotenv',
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
   axios: {
@@ -60,6 +61,16 @@ module.exports = {
       home: '/',
     },
     resetOnError: true,
+  },
+  oneSignal: {
+    cdn: true,
+    init: {
+      appId: process.env.ONESIGNAL_ID || 'YOUR_APP_ID',
+      allowLocalhostAsSecureOrigin: true,
+      // welcomeNotification: {
+      //   disable: true
+      // }
+    }
   },
   manifest: {
     name: 'Future Leader Summit 2018',
