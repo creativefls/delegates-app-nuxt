@@ -8,7 +8,12 @@ export const mutations = {
 
 export const actions = {
   async getAllAnnouncements({}, filter) {
-    let response = await this.$axios.$get(apiUrl + 'api/announcement', )
+    let response = await this.$axios.$get(apiUrl + 'api/announcement')
+
+    return response
+  },
+  async getAnnouncementById({}, id) {
+    let response = await this.$axios.$get(apiUrl + 'api/announcement/' + id)
 
     return response
   },

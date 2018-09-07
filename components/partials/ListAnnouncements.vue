@@ -26,7 +26,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn small color="success" outline nuxt to="/pengumuman/detail">Detail</v-btn>
+                <v-btn small color="success" outline nuxt :to="'/pengumuman/' + announcement._id">Detail</v-btn>
               </v-card-actions>
             </v-flex>
           </v-layout>
