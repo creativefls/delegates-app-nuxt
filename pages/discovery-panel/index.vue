@@ -13,7 +13,7 @@
 
       <v-card v-else-if="selectedClass" class="pa-5">
         <v-card-text class="text-xs-center">
-          <div class="title mb-5">Kamu sudah memilih kelas</div>
+          <div class="title mb-5">Kamu telah memilih kelas</div>
           <div class="display-2 primary--text">{{ selectedClass ? selectedClass.className : '' }}</div>
 
         </v-card-text>
@@ -35,7 +35,7 @@
             </v-flex>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="success" small outline @click="selectThisClass">Pilih</v-btn>
+                <v-btn color="success" small outline @click="selectThisClass(kelas.namaKelas)">Pilih</v-btn>
             </v-card-actions>
           </v-layout>
           <hr class="white">
@@ -109,13 +109,21 @@ export default {
   },
   methods: {
     ...mapActions({
-      getMyClassroom: 'classroom/getMyClassroom'
+      notify: 'notify',
+      getMyClassroom: 'classroom/getMyClassroom',
+      selectClassroom: 'classroom/selectClassroom'
     }),
-    selectThisClass () {
+    selectThisClass (className) {
       let confirm = window.confirm('Kamu yakin?')
       if (confirm) {
-        console.log('ya yakin');
-
+        this.selectClassroom({ className }).then(res => {
+          this.notify({ type: 'success', message: 'Selamat, kamu berhasil memilih kelas' });
+          this.getClassroom()
+        }).catch(err => {
+          let msg = err.message
+          if (err.response) msg = err.response.data.message
+          this.notify({ type: 'error', message: msg });
+        })
       }
     },
     getClassroom () {
@@ -126,6 +134,9 @@ export default {
         this.loadingGet = false
       }).catch(err => {
         console.log('error kelas', err);
+        let msg = err.message
+        if (err.response) msg = err.response.data.message
+        this.notify({ type: 'error', message: msg });
         this.loadingGet = false
       })
     }

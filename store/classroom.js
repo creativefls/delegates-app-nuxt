@@ -12,6 +12,14 @@ export const actions = {
 
     return response
   },
+  async selectClassroom({ }, { className }) {
+    let response = await this.$axios.$post(apiUrl + '/api/classroom', {
+      className,
+      scope: 'discovery panel'
+    })
+
+    return response
+  }
 }
 
 export const getters = {
