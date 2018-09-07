@@ -1,46 +1,58 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <v-card>
-            <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
-              Pilih kelas yang kamu inginkan :
-            </h3>
-            <v-container
-            v-for="kelas in kelas"
-            :key="kelas.namaKelas"
-            fluid grid-list-lg>
-                <v-layout>
-                    <!-- <v-flex xs3>
-                        <img
-                        :src="kelas.imgKelas"
-                        height="50px"
-                        class="img-kelas"
-                        >
-                    </v-flex> -->
-                    <v-flex xs9>
-                        <v-card-text class="subheading font-weight-bold" style="padding:0px">
-                        {{ kelas.namaKelas }}
-                        </v-card-text>
-                    </v-flex>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn color="success" small outline:to="kelas.linkTo">Pilih</v-btn>
-                    </v-card-actions>
-                </v-layout>
-                <hr class="white">
-            </v-container>
+      <v-card v-if="loadingGet" class="pa-5">
+        <v-card-text class="pa-5">
+          <v-progress-circular
+            :size="50"
+            color="primary"
+            indeterminate
+          ></v-progress-circular>
+        </v-card-text>
+      </v-card>
+
+      <v-card v-else-if="selectedClass" class="pa-5">
+        <v-card-text class="text-xs-center">
+          <div class="title mb-5">Kamu sudah memilih kelas</div>
+          <div class="display-2 primary--text">{{ selectedClass ? selectedClass.className : '' }}</div>
+
+        </v-card-text>
+      </v-card>
+
+      <v-card v-else>
+        <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
+          Pilih kelas yang kamu inginkan :
+        </h3>
+        <v-container
+          v-for="kelas in kelas"
+          :key="kelas.namaKelas"
+          fluid grid-list-lg>
+          <v-layout>
+            <v-flex xs9>
+                <v-card-text class="subheading font-weight-bold" style="padding:0px">
+                {{ kelas.namaKelas }}
+                </v-card-text>
+            </v-flex>
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="success" small outline @click="selectThisClass">Pilih</v-btn>
+            </v-card-actions>
+          </v-layout>
+          <hr class="white">
+        </v-container>
       </v-card>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 export default {
-  components: {
-  },
   data () {
     return {
+      selectedClass: null,
+      loadingGet: false,
       kelas: [
         {
           namaKelas: 'Design Thinking',
@@ -94,6 +106,32 @@ export default {
         },
       ]
     }
+  },
+  methods: {
+    ...mapActions({
+      getMyClassroom: 'classroom/getMyClassroom'
+    }),
+    selectThisClass () {
+      let confirm = window.confirm('Kamu yakin?')
+      if (confirm) {
+        console.log('ya yakin');
+
+      }
+    },
+    getClassroom () {
+      this.loadingGet = true
+      this.getMyClassroom().then(res => {
+        console.log('kelas', res);
+        this.selectedClass = res
+        this.loadingGet = false
+      }).catch(err => {
+        console.log('error kelas', err);
+        this.loadingGet = false
+      })
+    }
+  },
+  mounted () {
+    this.getClassroom()
   }
 }
 </script>
