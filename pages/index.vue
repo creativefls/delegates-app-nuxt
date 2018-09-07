@@ -81,6 +81,7 @@ export default {
   },
   methods: {
     ...mapActions({
+      notify: 'notify',
       getAllAnnouncements: 'announcement/getAllAnnouncements'
     }),
     fetchAnnouncements () {

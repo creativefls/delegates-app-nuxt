@@ -84,6 +84,7 @@ export default {
         this.loadingSend = false
       }).catch(err => {
         console.log('eror', err);
+        this.notify({ type: 'error', message: err.message });
         this.loadingSend = false
       })
     },
