@@ -18,7 +18,7 @@
     </v-container>
 
     <!-- FIXME: nyalakan ini lagi nanti buat release beneran -->
-    <v-container v-if="false" fluid class="white mt-3">
+    <v-container fluid class="white mt-3">
       <v-subheader class="px-0 primary--text">Pengumuman terbaru</v-subheader>
       <list-announcements/>
       <v-layout justify-center>

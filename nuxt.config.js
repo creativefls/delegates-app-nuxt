@@ -34,7 +34,6 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/dotenv',
-    '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
   axios: {
@@ -59,16 +58,6 @@ module.exports = {
       callback: '/auth/login',
       user: '/profile',
       home: '/',
-    }
-  },
-  oneSignal: {
-    cdn: true,
-    init: {
-      appId: process.env.ONESIGNAL_ID || 'YOUR_APP_ID',
-      allowLocalhostAsSecureOrigin: true,
-      // welcomeNotification: {
-      //   disable: true
-      // }
     }
   },
   manifest: {
