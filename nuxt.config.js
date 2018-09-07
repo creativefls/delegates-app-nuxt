@@ -58,8 +58,7 @@ module.exports = {
       callback: '/auth/login',
       user: '/profile',
       home: '/',
-    },
-    resetOnError: true,
+    }
   },
   manifest: {
     name: 'Future Leader Summit 2018',
