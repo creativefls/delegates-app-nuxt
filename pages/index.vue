@@ -17,8 +17,7 @@
       </v-layout>
     </v-container>
 
-    <!-- FIXME: nyalakan ini lagi nanti buat release beneran -->
-    <v-container fluid class="white mt-3">
+    <v-container v-if="announcements.length > 0" fluid class="white mt-3">
       <v-subheader class="px-0 primary--text">Pengumuman terbaru</v-subheader>
       <list-announcements :items="announcements" partial />
       <v-layout justify-center>
