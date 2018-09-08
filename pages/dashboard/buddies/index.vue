@@ -7,11 +7,11 @@
       class="elevation-1"
     >
       <template slot="items" slot-scope="props">
-        <td>{{ props.item.email }}</td>
+        <td>{{ props.index + 1}}</td>
         <td class="text-xs-right">{{ props.item.info.fullName }}</td>
         <td class="text-xs-right">{{ props.item.roles[0] }}</td>
-        <td class="text-xs-right">{{ props.item.carbs }}</td>
-        <td class="text-xs-right">{{ props.item.protein }}</td>
+        <td class="text-xs-right">{{ props.item.buddyNumber }}</td>
+        <td class="text-xs-right">{{ props.item.tableNumber }}</td>
         <td class="justify-center layout px-0">
           <v-icon
             small
@@ -26,15 +26,15 @@
           </v-icon>
         </td>
       </template>
-      <template slot="no-data">
-        <v-btn color="primary" @click="reload">Reset</v-btn>
-      </template>
     </v-data-table>
+    <v-btn color="primary" @click="bulkSend">Kirim</v-btn>
   </div>
 </template>
 
 <script>
 import _ from 'lodash'
+
+let apiUrl = 'https://backend.futureleadersummit.org'
 
 function generateNumbs (start, end) {
   let length = end - start + 1
@@ -102,21 +102,59 @@ export default {
         ...generateNumbs(193, 200),
       ]
     },
+
+    tableEdu () {
+      return [
+        ...generateNumbs(1, 30),
+        ...generateNumbs(21, 30),
+      ]
+    },
+
+    reducedUser () {
+      return this.users.map(item => {
+        return {
+          userId: item.id,
+          name: item.info.fullName,
+          buddyNumber: item.buddyNumber,
+          tableNumber: item.tableNumber,
+        }
+      })
+    }
   },
   methods: {
-    reload () {
-
+    bulkSend () {
+      this.$axios.$post(apiUrl + '/api/delegate', {
+        delegates: this.reducedUser
+      }).then(res => {
+        console.log('sukses', res);
+      }).catch(err => {
+        console.log('error', err);
+      })
     },
     fetchUsers () {
       this.$axios.$get('/api/users').then(res => {
         // this.users = res.sort((a,b) => { a.email - b.email })
-        this.users = _.orderBy(res, ['roles'])
+        // this.users = _.orderBy(res, ['roles'])
+        this.users = _.filter(res, function(item){
+          return item.roles[0] === 'DELEGATES_2018_POVERTY';
+        });
+        this.users = this.users.map((item, index) => {
+          item.buddyNumber = this.buddyPoverty[index]
+          item.tableNumber = this.tableEdu[index]
+          return item
+        })
+
+
       }).catch(err => {
         console.log('error', err);
       })
     }
   },
   created () {
+    if(!this.$store.getters['user/isHasRole']('admin')) {
+      return this.$router.push('/')
+    }
+
     this.fetchUsers()
     console.log('angka', generateNumbs(33, 49));
 
