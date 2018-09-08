@@ -72,7 +72,7 @@ export default {
       tiles: [
         { icon: 'dashboard', color: 'success', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: true },
         { icon: 'assignment', color: 'info', title: 'Live Score', path: '/live-score' },
-        { icon: 'local_bar', color: 'pink', title: 'Gala FLS', path: '/gala', disabled: true },
+        { icon: 'local_bar', color: 'pink', title: 'Gala FLS', path: '/gala' },
         // { icon: 'fastfood', color: 'info', title: 'Pilih Sarapan', path: '/sarapan', disabled: true },
         // { icon: 'how_to_vote', color: 'error', title: 'Vote', path: '/vote' , disabled: true },
       ]
