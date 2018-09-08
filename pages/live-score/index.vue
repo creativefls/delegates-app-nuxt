@@ -61,7 +61,7 @@ export default {
   computed: {
     scores () {
       return [
-        { title: 'KEMENDIGBUD', score: this.liveScore.mendikbud, color: 'yellow accent-4' },
+        { title: 'KEMENDIKBUD', score: this.liveScore.mendikbud, color: 'yellow accent-4' },
         { title: 'Kementerian PUPR', score: this.liveScore.pupr, color: 'blue' },
         { title: 'Kementerian Pertanian', score: this.liveScore.pertanian, color: 'amber accent-4' },
         { title: 'BEKRAF', score: this.liveScore.bekraf, color: 'brown darken-4' },
