@@ -5,7 +5,7 @@
       <b><i style="color:#772419; font-size:20px;">Future </i></b>
       <b><i style="color:#ada429; font-size:20px;">Leader </i></b>
       <b><i style="font-size:20px;">In </i></b>
-      <b><i style="color:#30498e; font-size:20px;">Action</i></b>      
+      <b><i style="color:#30498e; font-size:20px;">Action</i></b>
     </p>
     <v-layout justify-center>
         <v-flex xs12 sm6>
@@ -40,26 +40,56 @@
 
 <script>
 import ListAnnouncements from "@/components/partials/ListAnnouncements";
+import { mapActions } from 'vuex'
 
 export default {
   data () {
     return {
-      scores: [
-        { title: 'KEMENDIGBUD', score: '0',color: 'yellow accent-4' },
-        { title: 'Kementerian PUPR', score: '0',color: 'blue' },
-        { title: 'Kementerian Pertanian', score: '0',color: 'amber accent-4' },
-        { title: 'BEKRAF', score: '0',color: 'brown darken-4' },
-        { title: 'Kementerian Ketenagakerjaan', score: '0',color: 'deep-purple accent-4' },
-        { title: 'KOMINFO', score: '0',color: 'green darken-3' }
+      liveScore: {
+        mendikbud: 0,
+        pupr: 0,
+        pertanian: 0,
+        bekraf: 0,
+        tenagaKerja: 0,
+        kominfo: 0
+      }
+    }
+  },
+  computed: {
+    scores () {
+      return [
+        { title: 'KEMENDIGBUD', score: this.liveScore.mendikbud, color: 'yellow accent-4' },
+        { title: 'Kementerian PUPR', score: this.liveScore.pupr, color: 'blue' },
+        { title: 'Kementerian Pertanian', score: this.liveScore.pertanian, color: 'amber accent-4' },
+        { title: 'BEKRAF', score: this.liveScore.bekraf, color: 'brown darken-4' },
+        { title: 'Kementerian Ketenagakerjaan', score: this.liveScore.tenagaKerja, color: 'deep-purple accent-4' },
+        { title: 'KOMINFO', score: this.liveScore.kominfo, color: 'green darken-3' }
       ]
     }
+  },
+  methods: {
+    ...mapActions({
+      notify: 'notify',
+      getLiveScore: 'liveScore/getLiveScore'
+    }),
+    loadDataLiveScore () {
+      this.getLiveScore().then(res => {
+        if (res) {
+          this.liveScore = res
+        }
+      }).catch(err => {
+        this.notify({ type: 'error', message: msg });
+      })
+    }
+  },
+  mounted () {
+    this.loadDataLiveScore()
   },
   components: { ListAnnouncements }
 }
 </script>
 
 <style lang="stylus">
-
 .card{
      max-width: 100vw;
      padding:0px;
