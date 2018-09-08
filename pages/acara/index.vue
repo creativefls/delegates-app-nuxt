@@ -65,7 +65,7 @@
         :key="acara.title">
         <v-flex xs12 >
           <v-card style="width: 310px">
-            <v-chip style="margin-top: -16px; " class="ml-4 py-1 px-3" label color="primary" text-color="white">
+            <v-chip @click="openDialogJourney(acara.title)" style="margin-top: -16px; " class="ml-4 py-1 px-3" label color="primary" text-color="white">
               <div>
                 <v-icon left small class="white--text">event</v-icon>
                 <b style="font-size: 15px">{{ acara.title }}</b>
@@ -85,7 +85,7 @@
                   <v-flex xs9>
                     <div style="padding-left: 10px;">
                       <div class="fa fa-black-tie" style="text-align: left; line-height: normal; margin-bottom: 4px;">
-                        {{ acara.dresscode }}
+                        {{ acara.dresscode }} <br>
                       </div>
                       <div class="fa fa-clock-o" style="text-align: left; line-height: normal; margin-bottom: 4px;">
                         {{ acara.jam }} WIB

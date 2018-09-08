@@ -2,11 +2,11 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <v-card>
-        <h3 class="font-weight-bold font-weight-black" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
+        <h3 class="font-weight-bold font-weight-black text-xs-center title py-4" style="font-size:16px;padding-left:10px;padding-top:10px;padding-bottom:0px">
           {{ announcement.title }}
         </h3>
         <hr class="white">
-          <v-container fluid grid-list-lg>
+          <v-container grid-list-lg>
             <v-layout>
               <v-flex class="text-xs-center">
                 <img
