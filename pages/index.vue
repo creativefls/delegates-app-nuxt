@@ -70,7 +70,7 @@ export default {
       ],
       sheet: false,
       tiles: [
-        { icon: 'dashboard', color: 'success', title: 'Kelas Discovery Panel', path: '/discovery-panel' , disabled: true },
+        { icon: 'dashboard', color: 'success', title: 'Kelas Discovery Panel', path: '/discovery-panel' },
         { icon: 'assignment', color: 'info', title: 'Live Score', path: '/live-score' },
         { icon: 'local_bar', color: 'pink', title: 'Gala FLS', path: '/gala' },
         // { icon: 'fastfood', color: 'info', title: 'Pilih Sarapan', path: '/sarapan', disabled: true },
