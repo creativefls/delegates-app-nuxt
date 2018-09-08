@@ -36,7 +36,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-chip small label> {{ infoClass[kelas.keyName] }} / 24 </v-chip>
-                <v-btn color="success" small outline @click="selectThisClass(kelas.namaKelas)">Pilih</v-btn>
+                <v-btn color="success" :disabled="infoClass[kelas.keyName] > 23" small outline @click="selectThisClass(kelas.namaKelas)">Pilih</v-btn>
             </v-card-actions>
           </v-layout>
 
@@ -73,47 +73,47 @@ export default {
         {
           namaKelas: 'Virtual Collaboration',
           keyName: 'virtualCollaboration',
-          detail: 'Virtual collaboration adalah metode kolaborasi antara anggota tim virtual yang dilakukan melalui komunikasi yang dimediasi teknologi. Kolaborasi virtual mengikuti proses yang sama dengan kolaborasi, tetapi pihak yang terlibat dalam kolaborasi virtual tidak berinteraksi secara fisik dan berkomunikasi secara eksklusif melalui saluran teknologi. Tim terdistribusi menggunakan kolaborasi virtual untuk mensimulasikan informasi transfer yang hadir dalam pertemuan tatap muka, berkomunikasi secara virtual melalui sarana verbal, visual, tertulis, dan digital.'          
+          detail: 'Virtual collaboration adalah metode kolaborasi antara anggota tim virtual yang dilakukan melalui komunikasi yang dimediasi teknologi. Kolaborasi virtual mengikuti proses yang sama dengan kolaborasi, tetapi pihak yang terlibat dalam kolaborasi virtual tidak berinteraksi secara fisik dan berkomunikasi secara eksklusif melalui saluran teknologi. Tim terdistribusi menggunakan kolaborasi virtual untuk mensimulasikan informasi transfer yang hadir dalam pertemuan tatap muka, berkomunikasi secara virtual melalui sarana verbal, visual, tertulis, dan digital.'
         },
         {
           namaKelas: 'Personal Branding',
           keyName: 'personalBranding',
-          detail: 'Personal branding adalah sebuah cara memasarkan diri atau imej kita secara individu. Jika sebelumnya praktek "memasarkan diri dan karier" lebih berdasarkan pada teknik manajemen self-help improvement, personal branding adalah konsep yang lebih menekankan bahwa kesuksesan datang dari self-packaging.'          
+          detail: 'Personal branding adalah sebuah cara memasarkan diri atau imej kita secara individu. Jika sebelumnya praktek "memasarkan diri dan karier" lebih berdasarkan pada teknik manajemen self-help improvement, personal branding adalah konsep yang lebih menekankan bahwa kesuksesan datang dari self-packaging.'
         },
         {
           namaKelas: 'People Management',
           keyName: 'peopleManagement',
-          detail: 'People management adalah tentang mengelola orang. People management adalah bagian dari manajemen sumber daya manusia, yang berhubungan dengan isu-isu strategis, keuangan dan kebijakan.'                    
+          detail: 'People management adalah tentang mengelola orang. People management adalah bagian dari manajemen sumber daya manusia, yang berhubungan dengan isu-isu strategis, keuangan dan kebijakan.'
         },
         {
           namaKelas: 'Digital Marketing',
           keyName: 'digitalMarketing',
-          detail: 'Digital marketing adalah suatu usaha untuk mempromosikan sebuah merek dengan menggunakan media digital yang dapat menjangkau konsumen secara tepat waktu, pribadi, dan relevan. Tipe pemasaran digital mencakup banyak teknik dan praktik yang terkandung dalam kategori pemasaran internet.'                    
+          detail: 'Digital marketing adalah suatu usaha untuk mempromosikan sebuah merek dengan menggunakan media digital yang dapat menjangkau konsumen secara tepat waktu, pribadi, dan relevan. Tipe pemasaran digital mencakup banyak teknik dan praktik yang terkandung dalam kategori pemasaran internet.'
         },
         {
           namaKelas: 'Emotional Intelligence',
           keyName: 'emotionalIntelligence',
-          detail: 'Emotional intelligence adalah kemampuan untuk mengidentifikasi dan mengelola emosi Anda sendiri dan emosi orang lain. Umumnya dikatakan mencakup tiga keterampilan: kesadaran emosional kemampuan untuk memanfaatkan emosi dan menerapkannya pada tugas-tugas seperti berpikir dan memecahkan masalah; dan kemampuan untuk mengelola emosi, yang termasuk mengatur emosi Anda sendiri dan menyemangati atau menenangkan orang lain.'                    
+          detail: 'Emotional intelligence adalah kemampuan untuk mengidentifikasi dan mengelola emosi Anda sendiri dan emosi orang lain. Umumnya dikatakan mencakup tiga keterampilan: kesadaran emosional kemampuan untuk memanfaatkan emosi dan menerapkannya pada tugas-tugas seperti berpikir dan memecahkan masalah; dan kemampuan untuk mengelola emosi, yang termasuk mengatur emosi Anda sendiri dan menyemangati atau menenangkan orang lain.'
         },
         {
           namaKelas: 'Cultural Intelligence',
           keyName: 'culturalIntelligence',
-          detail: 'Cultural intelligence adalah ketrampilan yang makin penting dalam dunia bisnis saat ini. Dunia makin “datar” dan dengan mudah kita terhubung dengan siapapun di manapun. Tak dapat dihindari, orang bekerja dan hidup dalam komunitas multikultural. Kita akan makin sering berhadapan dengan orang dari ras, budaya dan latar belakang yang berbeda. Dalam situasi demikian, butuh serangkaian perspektif, pengetahuan dan ketrampilan mengenali perbedaaan budaya agar dapat memahami dan beradaptasi dengan mulus dalam berbagai situasi.'                    
+          detail: 'Cultural intelligence adalah ketrampilan yang makin penting dalam dunia bisnis saat ini. Dunia makin “datar” dan dengan mudah kita terhubung dengan siapapun di manapun. Tak dapat dihindari, orang bekerja dan hidup dalam komunitas multikultural. Kita akan makin sering berhadapan dengan orang dari ras, budaya dan latar belakang yang berbeda. Dalam situasi demikian, butuh serangkaian perspektif, pengetahuan dan ketrampilan mengenali perbedaaan budaya agar dapat memahami dan beradaptasi dengan mulus dalam berbagai situasi.'
         },
         {
           namaKelas: 'Judgement and Decision Making',
           keyName: 'judgement',
-          detail: 'Pengambilan keputusan dapat dianggap sebagai aktivitas pemecahan masalah yang diakhiri oleh solusi yang dianggap optimal, atau setidaknya memuaskan. Oleh karena itu adalah suatu proses yang bisa lebih atau kurang rasional atau tidak rasional dan dapat didasarkan pada pengetahuan dan keyakinan eksplisit atau diam-diam.'                    
+          detail: 'Pengambilan keputusan dapat dianggap sebagai aktivitas pemecahan masalah yang diakhiri oleh solusi yang dianggap optimal, atau setidaknya memuaskan. Oleh karena itu adalah suatu proses yang bisa lebih atau kurang rasional atau tidak rasional dan dapat didasarkan pada pengetahuan dan keyakinan eksplisit atau diam-diam.'
         },
         {
           namaKelas: 'Financial Planning',
           keyName: 'financial',
-          detail: 'Perencanaan keuangan (Financial Planning) adalah sebuah proses dimana seorang individu berusaha untuk memenuhi tujuan-tujuan finansialnya melalui pengembangan dan implementasi dari sebuah rencana keuangan (financial plan) yang komprehensif.'                    
+          detail: 'Perencanaan keuangan (Financial Planning) adalah sebuah proses dimana seorang individu berusaha untuk memenuhi tujuan-tujuan finansialnya melalui pengembangan dan implementasi dari sebuah rencana keuangan (financial plan) yang komprehensif.'
         },
         {
           namaKelas: 'Negotiation',
           keyName: 'negotiation',
-          detail: 'Negosiasi adalah metode yang digunakan orang untuk menyelesaikan perbedaan. Negosiasi adalah proses di mana kompromi atau kesepakatan tercapai sambil menghindari perdebatan dan perselisihan. Keterampilan negosiasi bisa sangat bermanfaat dalam menyelesaikan setiap perbedaan yang muncul antara Anda dan orang lain.'                    
+          detail: 'Negosiasi adalah metode yang digunakan orang untuk menyelesaikan perbedaan. Negosiasi adalah proses di mana kompromi atau kesepakatan tercapai sambil menghindari perdebatan dan perselisihan. Keterampilan negosiasi bisa sangat bermanfaat dalam menyelesaikan setiap perbedaan yang muncul antara Anda dan orang lain.'
         },
       ]
     }
