@@ -22,9 +22,8 @@
                 >
                 <v-card
                 height="95px"
-                width="95px"
                 :color="score.color">
-                    <div class="white--text">
+                    <div class="white--text py-1">
                         <div style="text-align:center" class="display-2">{{ score.score }}</div>
                         <div style="font-size:12px;" class="center font-weight-black">{{score.title}}</div>
                     </div>
@@ -34,6 +33,9 @@
             </v-container>
         </v-card>
         </v-flex>
+    </v-layout>
+    <v-layout justify-center class="py-5">
+      <v-btn @click="loadDataLiveScore" outline color="primary" :loading="loadingReload">reload</v-btn>
     </v-layout>
   </div>
 </template>
@@ -45,6 +47,7 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      loadingReload: false,
       liveScore: {
         mendikbud: 0,
         pupr: 0,
@@ -73,12 +76,15 @@ export default {
       getLiveScore: 'liveScore/getLiveScore'
     }),
     loadDataLiveScore () {
+      this.loadingReload = true
       this.getLiveScore().then(res => {
         if (res) {
           this.liveScore = res
         }
+        this.loadingReload = false
       }).catch(err => {
         this.notify({ type: 'error', message: msg });
+        this.loadingReload = false
       })
     }
   },
